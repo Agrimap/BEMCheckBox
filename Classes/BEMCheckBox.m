@@ -121,7 +121,9 @@
 }
 
 #pragma mark Setters
-- (void)_setOn:(BOOL)on animated:(BOOL)animated notifyGroup:(BOOL)notifyGroup {
+
+- (void)_setOn:(BOOL)on animated:(BOOL)withAnimated notifyGroup:(BOOL)notifyGroup {
+    BOOL animated = !withAnimated ? NO :_on != on;
     _on = on;
     
     [self drawEntireCheckBox];
